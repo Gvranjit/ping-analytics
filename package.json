@@ -1,0 +1,14 @@
+{
+  "name": "ping-analytics",
+  "version": "1.0.0",
+  "description": "Pinging service with electron GUI",
+  "main": "./src/index.ts",
+  "author": "gvranjit@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "ts-node": "^10.8.1",
+    "tsc": "^2.0.4",
+    "typescript": "^4.7.4"
+  }
+}
