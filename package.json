@@ -1,8 +1,9 @@
 {
 	"scripts": {
-		"start": "yarn cleanup && yarn build && electron ./build/app.js",
+		"start": "concurrently \"npm run build-watch\"  \"electron ./build/app.js\"",
 		"cleanup": "rimraf ./build",
-		"build": "swc ./src/app.ts -o ./build/app.js  --config-file .swcrc"
+		"build": "swc ./src/ -d ./build/  --config-file .swcrc",
+		"build-watch": "swc -w ./src/ -d ./build/  --config-file .swcrc"
 	},
 	"name": "ping-analytics",
 	"version": "1.0.0",
@@ -11,8 +12,12 @@
 	"author": "gvranjit@gmail.com",
 	"license": "MIT",
 	"devDependencies": {
+		"@swc/cli": "^0.1.57",
+		"@swc/core": "^1.2.207",
 		"@types/node": "^18.0.0",
+		"concurrently": "^7.2.2",
 		"electron": "^19.0.6",
+		"electron-reload": "^2.0.0-alpha.1",
 		"rimraf": "^3.0.2",
 		"swc": "^1.0.11",
 		"ts-node": "^10.8.1",
