@@ -15,6 +15,7 @@ function createWindow() {
 	win.setBackgroundColor("grey");
 	win.setMenu(null);
 	win.loadFile("../src/index.html");
+	win.webContents.openDevTools();
 }
 
 app.disableHardwareAcceleration();
